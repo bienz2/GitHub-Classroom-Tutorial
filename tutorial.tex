@@ -130,20 +130,20 @@ Included below are hints, including screenshots accomplishing many of the tasks 
 \subsection*{Hints}
 \begin{enumerate}
     \item [(1.2:)] The image below shows how to find your repository address.  This is needed to clone your repository.  Copy this address and paste it after `git clone` for an initial copy of the code.\\
-    \includegraphics[width=0.75\textwidth]{Homework/figs/0_repo_addr.jpg}
+    \includegraphics[width=0.75\textwidth]{figs/0_repo_addr.jpg}
 
-    \item [(1.3:)] After you clone your repository, you should see similar output.  If you get an error, check your that you have correctly copied the HTTPS address from your repository.  If you are asked for a password, you need to use your GitHub authentication token, not your main GitHub password.\\  \includegraphics[width=0.75\textwidth]{Homework/figs/1_clone.jpg}
+    \item [(1.3:)] After you clone your repository, you should see similar output.  If you get an error, check your that you have correctly copied the HTTPS address from your repository.  If you are asked for a password, you need to use your GitHub authentication token, not your main GitHub password.\\  \includegraphics[width=0.75\textwidth]{figs/1_clone.jpg}
 
     \item [(1.5)] After you update your submodule, you may see similar output to the image below.  However, if your submodule was already up-to-date, you will see no output when you type this command.\\
-    \includegraphics[width=0.75\textwidth]{Homework/figs/4_submodule.jpg}
+    \includegraphics[width=0.75\textwidth]{figs/4_submodule.jpg}
 
     \item [(2.3)] The following image shows how to create a new build folder, move into that folder, and run the `cmake` configuration script from within that folder.  \textbf{Make sure you have two dots after cmake, pointing to the CMakeLists.txt file, which is in the parent directory of your current location (the build folder).}\\
-    \includegraphics[width=0.75\textwidth]{Homework/figs/5_configure.jpg}\\
+    \includegraphics[width=0.75\textwidth]{figs/5_configure.jpg}\\
     CMake will configure your code, and you should see the line saying `Build files have been written to...`, pointing to a location on your computer.  You may see warnings and that is okay, but you should not see any CMake errors.\\
-    \includegraphics[width=0.75\textwidth]{Homework/figs/6_configure.jpg}
+    \includegraphics[width=0.75\textwidth]{figs/6_configure.jpg}
 
     \item [(2.4)] When you compile your code, you should see files being built and linked.  You should also initially see an error at the end.  After you create your new function (step 2.5), and add it to the CMakeLists.txt (step 2.7), this error should go away.\\
-    \includegraphics[width=0.75\textwidth]{Homework/figs/7_compile.jpg}
+    \includegraphics[width=0.75\textwidth]{figs/7_compile.jpg}
 
     \item [(2.5)] There are many options for creating a new file, including:
     \begin{itemize}
@@ -154,18 +154,18 @@ Included below are hints, including screenshots accomplishing many of the tasks 
     \end{itemize}
 
     \item [(2.7)] This is what the CMakeLists.txt looks like.  If this is not what you see, you have opened the incorrect file.  Make sure you are opening the file CMakeLists.txt that is located within the main directory (not a file by the same name within the submodule).  \textbf{Add the .cpp file that you created either directly above or directly below the SRC\_SOURCES variable.}\\
-    \includegraphics[width=0.75\textwidth]{Homework/figs/8_cmake.jpg}
+    \includegraphics[width=0.75\textwidth]{figs/8_cmake.jpg}
 
     \item [(3.2)] Below is what the output of typing `make test` should look like.  If this is not what you see, check out common issues in the subsection below.\\
-    \includegraphics[width=0.75\textwidth]{Homework/figs/9_googletest.jpg}
+    \includegraphics[width=0.75\textwidth]{figs/9_googletest.jpg}
 
     \item [(3.4)] This is what your `compile.sh` script should look like.\\
-    \includegraphics[width=0.75\textwidth]{Homework/figs/10config.png}
+    \includegraphics[width=0.75\textwidth]{figs/10config.png}
 
     \item [(4.8)] This is what you should see if you open up a passing GitHub actions test case (along with a green checkmark next to the Action).\\
-    \includegraphics[width=0.75\textwidth]{Homework/figs/pass_autograder.png}\\
+    \includegraphics[width=0.75\textwidth]{figs/pass_autograder.png}\\
     If you click on the the dropdown arrow above the Autograding reporter, you should see the following.  If your test is not passing, you should click on the drop-down arrow to see why you are not passing, and check out common issues below for more information.\\
-    \includegraphics[width=0.75\textwidth]{Homework/figs/pass_test.png}
+    \includegraphics[width=0.75\textwidth]{figs/pass_test.png}
 \end{enumerate}
 
 \subsection*{Common Issues}
@@ -188,43 +188,43 @@ Included below are hints, including screenshots accomplishing many of the tasks 
     \item \textbf{If you get an error in your GitHub Actions, click on the dropdown arrow for the individual tests (above your autograding report).  Some things you may find:}
     \begin{enumerate}
         \item `CMake Error` will point to the line within the `CMakeLists.txt` that an error is encountered.  If this includes `add\_subdirectory`, the issue is likely your submodule.  Go back and check that the code from Part 1, step 5 was added to your `compile.sh` file.\\
-        \includegraphics[width=0.75\textwidth]{Homework/figs/error_submodule.png}
+        \includegraphics[width=0.75\textwidth]{figs/error_submodule.png}
 
         \item `Cannot find source file` means you are trying to compile code but cannot find the file.  Make sure you have added/committed/pushed the new file that you created.\\
-        \includegraphics[width=0.75\textwidth]{Homework/figs/error_code.png}
+        \includegraphics[width=0.75\textwidth]{figs/error_code.png}
 
         
         \item If your unit test fails, your return0 function does not return the number 0.\\
-        \includegraphics[width=0.75\textwidth]{Homework/figs/error_test.png}
+        \includegraphics[width=0.75\textwidth]{figs/error_test.png}
     \end{enumerate}
 
     \item \textbf{Files Not Pushed.}  If you have a file on your computer and it is not showing up in your online repository, there are many possible reasons.  Type `git status` and check if you see any of the following:
 
     \begin{enumerate}
         \item The image below indicates you have changed the file `CMakeLists.txt`.  Add this updated file, commit, and push.\\
-        \includegraphics[width=0.75\textwidth]{Homework/figs/updates.png}
+        \includegraphics[width=0.75\textwidth]{figs/updates.png}
 
         \item The image below indicates you have created a new file `code.cpp`.  The command `git add -u` will not add this file, as it is untracked.  You need to type `git add code.cpp`.  Then, you will be able to commit and push the file.\\
-        \includegraphics[width=0.75\textwidth]{Homework/figs/untracked.png}
+        \includegraphics[width=0.75\textwidth]{figs/untracked.png}
 
         \item The image below indicates you have already added files, but have not committed or pushed.  Commit and push these files.\\
-        \includegraphics[width=0.75\textwidth]{Homework/figs/added.png}
+        \includegraphics[width=0.75\textwidth]{figs/added.png}
 
         \item The image below indicates you have already committed files, but have not pushed.  Push these files.  Hint: there are no colors here.  The indication that you have committed is that `your branch is ahead of origin`, where `origin` is the online repository.\\
-        \includegraphics[width=0.75\textwidth]{Homework/figs/added.png}
+        \includegraphics[width=0.75\textwidth]{figs/added.png}
 
         \item If all updated files have been committed and pushed, your repository should look like the following.\\
-        \includegraphics[width=0.75\textwidth]{Homework/figs/clean_dir.png}
+        \includegraphics[width=0.75\textwidth]{figs/clean_dir.png}
     \end{enumerate}
     
     \item \textbf{Branch Issues:} If your status shows all files have been pushed, type `git branch`.  This should only show one branch.  
 
     \begin{enumerate}
         \item If instead you see HEAD detached, this means you are no longer appropriately connected to your GitHub repository. \\
-        \includegraphics[width=0.75\textwidth]{Homework/figs/detached.png}    
+        \includegraphics[width=0.75\textwidth]{figs/detached.png}    
     
         \item To fix this, you can create a new branch and merge it into the correct branch, as shown in the following image.\\
-        \includegraphics[width=0.75\textwidth]{Homework/figs/fix_detached.png}
+        \includegraphics[width=0.75\textwidth]{figs/fix_detached.png}
     \end{enumerate}
 \end{enumerate}
 
